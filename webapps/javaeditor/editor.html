@@ -21,8 +21,7 @@
 </head>
 <body>
 <pre id="editor">
-</pre>
-    
+</pre>    
 <script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
@@ -30,13 +29,24 @@
     editor.getSession().setMode("ace/mode/java");
     function setTheme(obj)
     {
-    	theme=obj.value;
+    	var theme=obj.value;
 	editor.setTheme("ace/theme/"+theme);
+    }
+    function setEditorType(obj)
+    {
+    	var editorType=obj.value;
+    	editor.getSession().setMode("ace/mode/"+editorType);
     }
 </script>
 <select id="theme" onchange="setTheme(this)">
 	<option value="eclipse">Eclipse</option>
 	<option value="twilight">Twilight</option>
+</select>
+
+<select id="editorType" onchange="setEditorType(this)">
+	<option value="java">Java</option>
+	<option value="javascript">JavaScript</option>
+	<option value="html">HTML</option>
 </select>
 </body>
 </html>
