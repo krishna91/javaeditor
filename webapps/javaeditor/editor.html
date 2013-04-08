@@ -31,10 +31,10 @@
     function setTheme(obj)
     {
     	theme=obj.value;
-    	alert(theme);
+	editor.setTheme("ace/theme/"+theme);
     }
 </script>
-<select id="theme" onselect="setTheme(this)">
+<select id="theme" onchange="setTheme(this)">
 	<option value="eclipse">Eclipse</option>
 	<option value="twilight">Twilight</option>
 </select>
